@@ -1,40 +1,131 @@
 source 'https://rubygems.org'
 
-
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.13'
-# Use sqlite3 as the database for Active Record
+
 gem 'pg', '~> 0.18'
 gem 'activerecord-postgis-adapter', '0.6.5.nonrelease', git: "https://github.com/barelyknown/activerecord-postgis-adapter.git", branch: "rails-4-1"
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.3'
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
-# Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer',  platforms: :ruby
-gem 'slim'
-# Use jquery as the JavaScript library
+gem 'rgeo', '0.3.20'
+gem 'rgeo-shapefile'
+
+gem 'sass'
+gem 'compass-rails'
+gem 'sprockets'
+gem 'coffee-rails'
+gem 'therubyracer', platforms: :ruby
+gem 'tilt', '1.4.1'
+gem 'uglifier'
+gem 'draper'
+gem 'acts_as_tenant'
+gem 'cancancan'
+gem "autoprefixer-rails"
+gem 'jbuilder'
+gem 'jsonapi-resources'
+gem 'jquery-cookie-rails'
+gem "recaptcha", require: "recaptcha/rails"
+
+gem 'aasm'
+gem 'rfo', '~> 0.0.1'
+
+gem 'react_webpack_rails'
+gem 'rwr-redux'
+gem "wysiwyg-rails"
+gem 'pry-rails'
+
+gem 'activeresource'
+gem 'browser-timezone-rails'
+gem 'pdfkit'
+gem 'jspdf-rails'
+gem 'googleauth'
+gem 'google-api-client', '~> 0.10'
+gem 'google_drive'
+gem 'aws-sdk-s3', '~> 1'
+gem 'aws-sdk-sqs', '~> 1'
+gem 'friendly_id', '~> 5.1.0'
+gem 'faraday'
+
+group :development, :staging, :test do
+   gem 'pry'
+   gem 'pry-remote'
+   gem 'i18n-debug'
+   gem 'rspec', '~> 3.0'
+   gem 'rspec-rails', '~> 3.0'
+   gem 'rspec-mocks'
+   gem 'rspec-activemodel-mocks'
+   gem 'factory_girl_rails', '~> 4.0'
+   gem 'ffaker'
+   gem 'faker', '~> 1.4.3'
+   gem "nyan-cat-formatter"
+   gem 'dogespec'
+   gem 'rspec-legacy_formatters'
+   gem 'gamifying_formatter'
+end
+
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'rb-readline'
+  gem 'seed_dump'
+  gem "spring"
+end
+
 gem 'jquery-rails'
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+gem 'jquery-ui-rails'
+gem 'slim'
+gem 'country_select', '1.3.1'
+gem 'carrierwave'
+gem 'copy_carrierwave_file'
+gem "fog"
+gem "mini_magick"
+gem "geocoder"
+gem 'simple_form'
+gem 'devise'
+gem 'devise_invitable'
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+gem 'simple_token_authentication', '~> 1.0'
+gem 'premailer-rails'
+gem 'nokogiri'
+gem 'redcarpet'
+gem 'activeadmin', github: 'activeadmin', branch: 'master'
+# gem 'activeadmin', git: 'https://github.com/activeadmin/activeadmin.git', tag: 'v1.0.0.pre2'
+# gem 'activeadmin', git: 'https://github.com/activeadmin/activeadmin.git', ref: 'ee93342'
+# gem 'active_skin', git: "https://github.com/primate-freelancer/active_skin.git"
+
+gem 'dotenv-rails', :groups => [:production, :staging]
+gem 'dotenv-deployment'
+gem 'ranked-model'
+gem 'delayed_job_active_record'
+gem 'mailchimp-api', require: 'mailchimp'
+gem 'daemons'
+gem 'nested_form_fields'
+gem 'gon'
+gem 'stripe'
+gem 'fastimage'
+gem 'posix-spawn'
+gem 'acts-as-taggable-on', '~> 4.0'
+
+group :test do
+  gem 'shoulda-matchers', require: false
+  gem 'database_cleaner'
+  gem 'capybara'
+  gem 'launchy'
+  # gem 'poltergeist'
+  # gem 'phantomjs', require: 'phantomjs/poltergeist'
+  gem 'vcr'
+  gem 'webmock'
+  gem 'rack_session_access'
+  gem 'selenium-webdriver', '2.53.4'
+  gem 'timecop'
+end
+
 gem 'turbolinks'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.0'
-# bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0',          group: :doc
 
-# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
+# Deploy with Capistrano
+# gem 'capistrano', '3.3.5'
+# gem 'capistrano-rails'
+# gem 'capistrano-passenger'
+# gem 'capistrano-bundler'
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'honeybadger', '~> 2.0.0'
 
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+gem 'rake', '< 11.0'
